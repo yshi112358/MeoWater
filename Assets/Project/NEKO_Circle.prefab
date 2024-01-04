@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 5102757348473599850}
   m_Layer: 7
   m_Name: NEKO_Circle
-  m_TagString: Untagged
+  m_TagString: White
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

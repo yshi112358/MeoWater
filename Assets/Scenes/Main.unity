@@ -1246,7 +1246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da1f749d484c41fca0bb91015d535c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _neko: {fileID: 7683799545617557599, guid: 932d0d6918b9146a8900e57f766a8d6f, type: 3}
+  _neko:
+  - {fileID: 7683799545617557599, guid: 932d0d6918b9146a8900e57f766a8d6f, type: 3}
+  - {fileID: 3722150829117926948, guid: afae7fd7e8910483189ead2dc855e1c3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

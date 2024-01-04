@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NekoMaker : MonoBehaviour
 {
-    [SerializeField] private GameObject _neko;
+    [SerializeField] private GameObject[] _neko;
     private float _time=0;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,6 @@ public class NekoMaker : MonoBehaviour
 
     void MakeNeko()
     {
-        Instantiate(_neko,transform.position,transform.rotation);
+        Instantiate(_neko[Random.Range(0,2)],transform.position,transform.rotation);
     }
 }
