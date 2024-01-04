@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2da1f749d484c41fca0bb91015d535c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _neko: {fileID: 4527916509538069834, guid: b8bce290c5acc49748ed3c4b194761a0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
