@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2360739849941381889}
   - component: {fileID: 4774609673428425924}
   - component: {fileID: 5611707262361726403}
-  - component: {fileID: 7746595688712884773}
+  - component: {fileID: 3300789738634667696}
+  - component: {fileID: 2030674049519208014}
   m_Layer: 0
   m_Name: bone_8
   m_TagString: Neko
@@ -162,7 +163,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &7746595688712884773
+--- !u!114 &3300789738634667696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,7 +172,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 481071977649275212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2030674049519208014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481071977649275212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3211237810307521726
@@ -188,7 +201,8 @@ GameObject:
   - component: {fileID: 257674503718033821}
   - component: {fileID: 8338100470097732302}
   - component: {fileID: 6176340893192223563}
-  - component: {fileID: 5629050124795564563}
+  - component: {fileID: 1741010621181404393}
+  - component: {fileID: 6287503211426875270}
   m_Layer: 0
   m_Name: bone_7
   m_TagString: Neko
@@ -336,7 +350,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &5629050124795564563
+--- !u!114 &1741010621181404393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,7 +359,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3211237810307521726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6287503211426875270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211237810307521726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4149241746645792512
@@ -362,7 +388,8 @@ GameObject:
   - component: {fileID: 1267288217898834403}
   - component: {fileID: 5856890551078086496}
   - component: {fileID: 8255946629297796807}
-  - component: {fileID: 4444732093979562922}
+  - component: {fileID: 3629410906067407207}
+  - component: {fileID: 7141082118713584179}
   m_Layer: 0
   m_Name: bone_3
   m_TagString: Neko
@@ -510,7 +537,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &4444732093979562922
+--- !u!114 &3629410906067407207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -519,7 +546,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4149241746645792512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7141082118713584179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149241746645792512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4944892937145369849
@@ -536,7 +575,8 @@ GameObject:
   - component: {fileID: 315162713705845220}
   - component: {fileID: 4620744599834225496}
   - component: {fileID: 3439745652512896976}
-  - component: {fileID: 9039481951765310314}
+  - component: {fileID: 5649182677536810792}
+  - component: {fileID: 8760529441798767136}
   m_Layer: 0
   m_Name: bone_5
   m_TagString: Neko
@@ -684,7 +724,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &9039481951765310314
+--- !u!114 &5649182677536810792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,7 +733,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4944892937145369849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8760529441798767136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944892937145369849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5165575147213915010
@@ -710,7 +762,8 @@ GameObject:
   - component: {fileID: 6912010478966305389}
   - component: {fileID: 8287182109693029622}
   - component: {fileID: 1247029380481043907}
-  - component: {fileID: 7397848947472888594}
+  - component: {fileID: 921348242370695285}
+  - component: {fileID: 32804022768919402}
   m_Layer: 0
   m_Name: bone_1
   m_TagString: Neko
@@ -858,7 +911,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &7397848947472888594
+--- !u!114 &921348242370695285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -867,7 +920,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5165575147213915010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &32804022768919402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165575147213915010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5914128788936100690
@@ -884,7 +949,8 @@ GameObject:
   - component: {fileID: 909165356528234443}
   - component: {fileID: 2437649972457645198}
   - component: {fileID: 7781703277887232485}
-  - component: {fileID: 1672778702899239673}
+  - component: {fileID: 5761862104771093181}
+  - component: {fileID: 1563345656327597176}
   m_Layer: 0
   m_Name: bone_6
   m_TagString: Neko
@@ -1032,7 +1098,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &1672778702899239673
+--- !u!114 &5761862104771093181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1041,7 +1107,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5914128788936100690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1563345656327597176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914128788936100690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7677609058698408265
@@ -1058,7 +1136,8 @@ GameObject:
   - component: {fileID: 5198627049832855683}
   - component: {fileID: 5913208526046337305}
   - component: {fileID: 5536978146982999920}
-  - component: {fileID: 3151537881359778351}
+  - component: {fileID: 3255553396432363952}
+  - component: {fileID: 3495880284684221241}
   m_Layer: 0
   m_Name: bone_4
   m_TagString: Neko
@@ -1206,7 +1285,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &3151537881359778351
+--- !u!114 &3255553396432363952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1215,7 +1294,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7677609058698408265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3495880284684221241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677609058698408265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7683799545617557599
@@ -1230,7 +1321,10 @@ GameObject:
   - component: {fileID: 110598235391338940}
   - component: {fileID: 5911883860735074996}
   - component: {fileID: 5102757348473599850}
+  - component: {fileID: -2946856285088281636}
   - component: {fileID: -4007055364286902611}
+  - component: {fileID: -2941244926789018211}
+  - component: {fileID: 5380881331059243083}
   m_Layer: 7
   m_Name: NEKO_Circle
   m_TagString: White
@@ -1323,6 +1417,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7683799545617557599}
   m_Mesh: {fileID: 0}
+--- !u!114 &-2946856285088281636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683799545617557599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306ecaffc139847f39653f568fbc6427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-4007055364286902611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,6 +1439,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e35e85b02f2c74c34ad00ae22ca38962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2941244926789018211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683799545617557599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5965a5adfc0486d8339498dd1fc5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: White
+--- !u!114 &5380881331059243083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683799545617557599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8167746679921827895
@@ -1349,7 +1480,8 @@ GameObject:
   - component: {fileID: 7258270707371856129}
   - component: {fileID: 6617867707096091338}
   - component: {fileID: 7710606744786721347}
-  - component: {fileID: 5372535087374400904}
+  - component: {fileID: 4853393053006268952}
+  - component: {fileID: 6063816747433282148}
   m_Layer: 0
   m_Name: bone_2
   m_TagString: Neko
@@ -1497,7 +1629,7 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 3
---- !u!114 &5372535087374400904
+--- !u!114 &4853393053006268952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1506,6 +1638,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8167746679921827895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22043b1c1aa38481aacaa8a61a3057fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6063816747433282148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167746679921827895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fd02c259fbb4d978422314e761ddc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
