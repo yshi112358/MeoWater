@@ -42,7 +42,6 @@ public class NekoDrawer : MonoBehaviour
             _uvList.Add(_child[i].localPosition+new Vector3(0.5f,0.5f,0));
             // _uvList.Add(_child[i].localPosition+new Vector3(0.5f,0.5f,0));
         }
-        Debug.Log(_child[0].position);
 
         _indexList.AddRange(new []{0,1,7,1,2,7,6,7,2,2,3,6,5,6,3,4,5,3});//0-2-1の頂点で1三角形。 1-2-3の頂点で1三角形。
 
