@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NekoMaker : MonoBehaviour
@@ -25,6 +26,6 @@ public class NekoMaker : MonoBehaviour
 
     void MakeNeko()
     {
-        Instantiate(_neko[Random.Range(0,2)],transform.position,transform.rotation);
+        Instantiate(_neko[Random.Range(0,_neko.Count())],transform.position,transform.rotation);
     }
 }

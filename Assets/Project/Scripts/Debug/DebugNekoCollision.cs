@@ -6,7 +6,7 @@ using UniRx.Triggers;
 using System.Linq;
 using Game.Neko;
 
-namespace Game.Debug
+namespace Game.NekoDebug
 {
 	public class DebugNekoCollision : MonoBehaviour
 	{
@@ -15,6 +15,7 @@ namespace Game.Debug
 		{
 			var lineList = new List<GameObject>();
 			this.UpdateAsObservable()
+				.TakeUntilDisable(this.gameObject)
 				.Subscribe(_ =>
 				{
 					foreach (var nekoData in _nekoCollisionList)
@@ -25,8 +26,11 @@ namespace Game.Debug
 						};
 						lineList.Where(line => line.name == nekoData.gameObject.GetInstanceID().ToString()).First().GetComponent<LineRenderer>().SetPositions(positions);
 					}
-				})
-				.AddTo(this);
+				}, () =>
+				{
+					lineList.ForEach(line => Destroy(line));
+					Debug.Log("Oncompleted");
+				});
 			_nekoCollisionList.ObserveAdd()
 				.Subscribe(nekoData =>
 				{

@@ -13,6 +13,7 @@ namespace Game.Neko.Bone
         void Awake()
         {
             this.OnCollisionEnter2DAsObservable()
+                .Where(_ => transform.parent.gameObject.activeSelf)
                 .Select(collision => collision.gameObject.GetComponentInParent<NekoData>())
                 .Where(collision => collision != null)
                 .Where(nekoData => nekoData != nekoDataMe)
@@ -21,6 +22,7 @@ namespace Game.Neko.Bone
                 .AddTo(this);
 
             this.OnCollisionExit2DAsObservable()
+                .Where(_ => transform.parent.gameObject.activeSelf)
                 .Select(collision => collision.gameObject.GetComponentInParent<NekoData>())
                 .Where(collision => collision != null)
                 .Where(nekoData => nekoData != nekoDataMe)
