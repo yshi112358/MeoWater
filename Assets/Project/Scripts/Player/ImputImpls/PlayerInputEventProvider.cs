@@ -21,11 +21,37 @@ namespace Game.Player.InputImpls
             _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyro");
             _playerInputAction.Enable();
             _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
+                .TakeUntilDestroy(this)
                 .Subscribe(x =>
                 {
-                    _move.Value = x/5f;
+                    _move.Value = x / 5f;
                 }).AddTo(this);
-            
+
+        }
+
+        public void EnableGyro()
+        {
+            _playerInputAction.Dispose();
+            _playerInputAction = new PlayerInputAction();
+            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyro");
+            _playerInputAction.Enable();
+            _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
+                .Subscribe(x =>
+                {
+                    _move.Value = x / 5f;
+                }).AddTo(this);
+        }
+        public void EnableTouch()
+        {
+            _playerInputAction.Dispose();
+            _playerInputAction = new PlayerInputAction();
+            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Touch");
+            _playerInputAction.Enable();
+            _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
+                .Subscribe(x =>
+                {
+                    _move.Value = x / 200f;
+                }).AddTo(this);
         }
     }
 }
