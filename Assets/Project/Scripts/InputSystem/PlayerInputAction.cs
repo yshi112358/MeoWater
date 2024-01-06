@@ -85,7 +85,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a49f20ff-9cc1-4774-865e-ee4f7013c712"",
-                    ""path"": ""<Gyroscope>/angularVelocity/x"",
+                    ""path"": ""<Gyroscope>/angularVelocity/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gyroscope"",

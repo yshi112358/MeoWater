@@ -40,6 +40,7 @@ namespace Game.Player.InputImpls
                     string str = "";
                     if (Gyro != null)
                     {
+                        InputSystem.EnableDevice(Gyro);
                         str += "Gyro: ";
                         if (Gyro.enabled)
                         {
