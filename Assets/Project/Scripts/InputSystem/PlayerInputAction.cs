@@ -63,7 +63,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e1617be6-5c05-45b1-874d-785673e56bf9"",
-                    ""path"": ""<Touchscreen>/position/x"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",
@@ -78,6 +78,17 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a49f20ff-9cc1-4774-865e-ee4f7013c712"",
+                    ""path"": ""<Gyroscope>/angularVelocity/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gyroscope"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -125,6 +136,17 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Gyroscope"",
+            ""bindingGroup"": ""Gyroscope"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gyroscope>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -272,6 +294,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         {
             if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
             return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
+    private int m_GyroscopeSchemeIndex = -1;
+    public InputControlScheme GyroscopeScheme
+    {
+        get
+        {
+            if (m_GyroscopeSchemeIndex == -1) m_GyroscopeSchemeIndex = asset.FindControlSchemeIndex("Gyroscope");
+            return asset.controlSchemes[m_GyroscopeSchemeIndex];
         }
     }
     public interface IPlayerActions

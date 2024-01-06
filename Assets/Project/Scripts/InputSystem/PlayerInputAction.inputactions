@@ -41,7 +41,7 @@
                 {
                     "name": "",
                     "id": "e1617be6-5c05-45b1-874d-785673e56bf9",
-                    "path": "<Touchscreen>/position/x",
+                    "path": "<Touchscreen>/primaryTouch/delta/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Touch",
@@ -56,6 +56,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a49f20ff-9cc1-4774-865e-ee4f7013c712",
+                    "path": "<Gyroscope>/angularVelocity/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gyroscope",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -103,6 +114,17 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gyroscope",
+            "bindingGroup": "Gyroscope",
+            "devices": [
+                {
+                    "devicePath": "<Gyroscope>",
                     "isOptional": false,
                     "isOR": false
                 }
