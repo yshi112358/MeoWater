@@ -24,7 +24,7 @@ namespace Game.Player.InputImpls
         void Awake()
         {
             _playerInputAction = new PlayerInputAction();
-            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyroscope");
+            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyro");
             _playerInputAction.Enable();
             _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
                 .TakeUntilDestroy(this)
@@ -64,6 +64,7 @@ namespace Game.Player.InputImpls
                     string str = "";
                     if (Accel != null)
                     {
+                        InputSystem.EnableDevice(Accel);
                         str += "Accel: ";
                         if (Accel.enabled)
                         {
