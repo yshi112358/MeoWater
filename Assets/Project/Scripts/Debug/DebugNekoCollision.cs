@@ -10,10 +10,12 @@ namespace Game.NekoDebug
 {
 	public class DebugNekoCollision : MonoBehaviour
 	{
+		private DebugSwitch _debugSwitch => FindObjectOfType<DebugSwitch>();
 		private ReactiveCollection<NekoData> _nekoCollisionList => GetComponent<NekoCollisionList>().nekoCollisionList;
+		private List<GameObject> lineList = new List<GameObject>();
+
 		void Awake()
 		{
-			var lineList = new List<GameObject>();
 			this.UpdateAsObservable()
 				.TakeUntilDisable(this.gameObject)
 				.Subscribe(_ =>
@@ -42,6 +44,10 @@ namespace Game.NekoDebug
 					linerend.endWidth = 0.1f;
 					linerend.sortingOrder = 10;
 
+					if (_debugSwitch.isDebug.Value)
+						linerend.enabled = true;
+					else
+						linerend.enabled = false;
 				})
 				.AddTo(this);
 			_nekoCollisionList.ObserveRemove()
@@ -50,6 +56,16 @@ namespace Game.NekoDebug
 					var line = lineList.Where(line => line.name == nekoData.Value.gameObject.GetInstanceID().ToString()).First();
 					lineList.Remove(line);
 					Destroy(line);
+				})
+				.AddTo(this);
+
+			_debugSwitch.isDebug
+				.Subscribe(x =>
+				{
+					foreach (var line in lineList)
+					{
+						line.GetComponent<LineRenderer>().enabled = x;
+					}
 				})
 				.AddTo(this);
 		}
