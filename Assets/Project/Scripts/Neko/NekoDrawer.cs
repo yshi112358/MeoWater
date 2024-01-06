@@ -4,6 +4,7 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 
+[ExecuteInEditMode]
 public class NekoDrawer : MonoBehaviour
 {
     private MeshFilter _meshFilter;
@@ -22,12 +23,14 @@ public class NekoDrawer : MonoBehaviour
         _meshFilter.mesh = _mesh;
 
         this.UpdateAsObservable()
-            .Where(_ => transform.parent.gameObject.activeSelf)
             .Subscribe(_ =>
             {
                 for (var i = 0; i < _vertextList.Count; i++)
                 {
-                    _vertextList[i] = _child[i].position - transform.position;
+                    _vertextList[i] = new Vector3(
+                        (_child[i].position.x - transform.position.x) / transform.localScale.x,
+                        (_child[i].position.y - transform.position.y) / transform.localScale.y,
+                        (_child[i].position.z - transform.position.z) / transform.localScale.z);
                 }
                 _mesh.SetVertices(_vertextList);
             })
@@ -44,7 +47,10 @@ public class NekoDrawer : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             _child[i] = transform.GetChild(i);
-            _vertextList.Add(_child[i].position - transform.position);
+            _vertextList.Add(new Vector3(
+                        (_child[i].position.x - transform.position.x) / transform.localScale.x,
+                        (_child[i].position.y - transform.position.y) / transform.localScale.y,
+                        (_child[i].position.z - transform.position.z) / transform.localScale.z));
             _uvList.Add(_child[i].localPosition + new Vector3(0.5f, 0.5f, 0));
         }
 
