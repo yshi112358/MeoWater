@@ -31,7 +31,6 @@ namespace Game.NekoDebug
 				}, () =>
 				{
 					lineList.ForEach(line => Destroy(line));
-					Debug.Log("Oncompleted");
 				});
 			_nekoCollisionList.ObserveAdd()
 				.Subscribe(nekoData =>

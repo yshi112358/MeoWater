@@ -7,6 +7,7 @@ using Game.Player;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
+using System;
 
 namespace Game.Player.InputImpls
 {
@@ -14,98 +15,58 @@ namespace Game.Player.InputImpls
     {
         public IReadOnlyReactiveProperty<float> Move => _move;
         private ReactiveProperty<float> _move = new ReactiveProperty<float>(0f);
-        private PlayerInputAction _playerInputAction;
 
-        [SerializeField]
-        private Text text1;
-        [SerializeField]
-        private Text text2;
+        private IDisposable _disposable = Disposable.Empty;
 
         void Awake()
         {
-            _playerInputAction = new PlayerInputAction();
-            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyro");
-            _playerInputAction.Enable();
-            _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
-                .TakeUntilDestroy(this)
+            EnableAccel();
+        }
+
+        public bool EnableGyro()
+        {
+            var Gyro = UnityEngine.InputSystem.Gyroscope.current;
+            if (Gyro == null)
+                return false;
+
+            InputSystem.EnableDevice(Gyro);
+            _disposable.Dispose();
+            _disposable = Gyro.angularVelocity.y.ObserveEveryValueChanged(x => x.ReadValue())
+                .Subscribe(x =>
+                {
+                    _move.Value = x / 5f;
+                }, () => Debug.Log("Gyro Complete")).AddTo(this);
+            return true;
+        }
+        public bool EnableAccel()
+        {
+            var Accel = UnityEngine.InputSystem.Accelerometer.current;
+            if (Accel == null)
+                return false;
+
+            InputSystem.EnableDevice(Accel);
+            _disposable.Dispose();
+            _disposable = Accel.acceleration.y.ObserveEveryValueChanged(x => x.ReadValue())
                 .Subscribe(x =>
                 {
                     _move.Value = x / 5f;
                 }).AddTo(this);
-
-            this.UpdateAsObservable()
-                .Subscribe(_ =>
-                {
-                    var Gyro = UnityEngine.InputSystem.Gyroscope.current;
-                    string str = "";
-                    if (Gyro != null)
-                    {
-                        InputSystem.EnableDevice(Gyro);
-                        str += "Gyro: ";
-                        if (Gyro.enabled)
-                        {
-                            str += "On";
-                            str += "Value: " + Gyro.angularVelocity.ReadValue();
-                        }
-                        else
-                        {
-                            str += "Off";
-                        }
-                    }
-
-
-                    text1.text = str;
-                }).AddTo(this);
-
-            this.UpdateAsObservable()
-                .Subscribe(_ =>
-                {
-                    var Accel = UnityEngine.InputSystem.Accelerometer.current;
-                    string str = "";
-                    if (Accel != null)
-                    {
-                        InputSystem.EnableDevice(Accel);
-                        str += "Accel: ";
-                        if (Accel.enabled)
-                        {
-                            str += "On";
-                            str += "Value: " + Accel.acceleration.ReadValue();
-                        }
-                        else
-                        {
-                            str += "Off";
-                        }
-                    }
-
-
-                    text2.text = str;
-                }).AddTo(this);
-
+            return true;
         }
-
-        public void EnableGyro()
+        public bool EnableTouch()
         {
-            _playerInputAction.Dispose();
-            _playerInputAction = new PlayerInputAction();
-            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Gyro");
-            _playerInputAction.Enable();
-            _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
+            var Touch = UnityEngine.InputSystem.Touchscreen.current;
+            if (Touch == null)
+                return false;
+
+            InputSystem.EnableDevice(Touch);
+            _disposable.Dispose();
+            _disposable = Touch.primaryTouch.ObserveEveryValueChanged(x => x.position.x.ReadValue())
                 .Subscribe(x =>
                 {
-                    _move.Value = x / 5f;
+                    _move.Value = (x / (float)Screen.width - 0.5f) / 2f;
                 }).AddTo(this);
-        }
-        public void EnableTouch()
-        {
-            _playerInputAction.Dispose();
-            _playerInputAction = new PlayerInputAction();
-            _playerInputAction.bindingMask = InputBinding.MaskByGroup("Touch");
-            _playerInputAction.Enable();
-            _playerInputAction.Player.Move.ObserveEveryValueChanged(x => x.ReadValue<float>())
-                .Subscribe(x =>
-                {
-                    _move.Value = x / 200f;
-                }).AddTo(this);
+            return true;
         }
     }
 }
