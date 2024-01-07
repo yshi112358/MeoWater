@@ -34,7 +34,7 @@ namespace Game.Player.InputImpls
             _disposable = Gyro.angularVelocity.y.ObserveEveryValueChanged(x => x.ReadValue())
                 .Subscribe(x =>
                 {
-                    _move.Value = x / 5f;
+                    _move.Value = x / 20f;
                 }, () => Debug.Log("Gyro Complete")).AddTo(this);
             return true;
         }
@@ -46,10 +46,10 @@ namespace Game.Player.InputImpls
 
             InputSystem.EnableDevice(Accel);
             _disposable.Dispose();
-            _disposable = Accel.acceleration.y.ObserveEveryValueChanged(x => x.ReadValue())
+            _disposable = Accel.acceleration.x.ObserveEveryValueChanged(x => x.ReadValue())
                 .Subscribe(x =>
                 {
-                    _move.Value = x / 5f;
+                    _move.Value = -x / 20f;
                 }).AddTo(this);
             return true;
         }
@@ -61,7 +61,7 @@ namespace Game.Player.InputImpls
 
             InputSystem.EnableDevice(Touch);
             _disposable.Dispose();
-            _disposable = Touch.primaryTouch.ObserveEveryValueChanged(x => x.position.x.ReadValue())
+            _disposable = Touch.primaryTouch.position.x.ObserveEveryValueChanged(x => x.ReadValue())
                 .Subscribe(x =>
                 {
                     _move.Value = (x / (float)Screen.width - 0.5f) / 2f;
