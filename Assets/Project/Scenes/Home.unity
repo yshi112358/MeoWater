@@ -1373,6 +1373,9 @@ GameObject:
   - component: {fileID: 1978048097}
   - component: {fileID: 1978048096}
   - component: {fileID: 1978048099}
+  - component: {fileID: 1978048100}
+  - component: {fileID: 1978048101}
+  - component: {fileID: 1978048102}
   m_Layer: 5
   m_Name: Game
   m_TagString: Untagged
@@ -1443,10 +1446,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1906621203}
-        m_TargetAssemblyTypeName: Game.Manager.SceneStateManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1978048101}
+        m_TargetAssemblyTypeName: Game.Home.HomeGameNekoTap, Assembly-CSharp
+        m_MethodName: OnHomeGameNekoTap
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1507,6 +1510,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInputEventProvider: {fileID: 1062470469}
   _moveDistance: -25
+--- !u!95 &1978048100
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978048094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cde435e2dddc44368acec58367e9df72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1978048101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978048094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cfcdf8ec8904f3e8136311b466b453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneStateManager: {fileID: 1906621203}
+--- !u!114 &1978048102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978048094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053467ea8ad7541d799573ba4599d47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
