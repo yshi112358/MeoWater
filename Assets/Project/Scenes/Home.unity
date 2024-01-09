@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 19648254}
   - component: {fileID: 19648258}
   - component: {fileID: 19648257}
+  - component: {fileID: 19648259}
+  - component: {fileID: 19648260}
   m_Layer: 5
   m_Name: Collection
   m_TagString: Untagged
@@ -280,6 +282,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInputEventProvider: {fileID: 1062470469}
   _moveDistance: -25
+--- !u!114 &19648259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19648252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053467ea8ad7541d799573ba4599d47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interval: 4
+  _percent: 25
+  _random: 2
+--- !u!114 &19648260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19648252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cfcdf8ec8904f3e8136311b466b453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneStateManager: {fileID: 1906621203}
 --- !u!1 &316956021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053467ea8ad7541d799573ba4599d47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interval: 3
+  _percent: 25
+  _random: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
