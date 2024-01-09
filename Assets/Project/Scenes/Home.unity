@@ -208,7 +208,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 19648255}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19648260}
+        m_TargetAssemblyTypeName: Game.Home.HomeNekoTap, Assembly-CSharp
+        m_MethodName: OnHomeGameNekoTap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19648255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneStateManager: {fileID: 1906621203}
+  _sceneName: Main
 --- !u!1 &316956021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1173,9 @@ GameObject:
   - component: {fileID: 1385078382}
   - component: {fileID: 1385078381}
   - component: {fileID: 1385078380}
+  - component: {fileID: 1385078383}
+  - component: {fileID: 1385078385}
+  - component: {fileID: 1385078384}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -1229,7 +1245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1385078381}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1385078384}
+        m_TargetAssemblyTypeName: Game.Home.HomeNekoTap, Assembly-CSharp
+        m_MethodName: OnHomeGameNekoTap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1385078381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,6 +1296,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385078378}
   m_CullTransparentMesh: 1
+--- !u!95 &1385078383
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385078378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a8cbc67b43c24449ade32860bd636be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1385078384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385078378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cfcdf8ec8904f3e8136311b466b453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneStateManager: {fileID: 1906621203}
+  _sceneName: Main
+--- !u!114 &1385078385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385078378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053467ea8ad7541d799573ba4599d47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interval: 3
+  _percent: 25
+  _random: 2
 --- !u!1 &1901835226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneStateManager: {fileID: 1906621203}
+  _sceneName: Main
 --- !u!114 &1978048102
 MonoBehaviour:
   m_ObjectHideFlags: 0
