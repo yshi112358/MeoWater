@@ -14,23 +14,35 @@ namespace Game.Neko
         private List<BoneNekoCollisionList> _boneNekoCollisionList => this.GetComponentsInChildren<BoneNekoCollisionList>().ToList();
         void Awake()
         {
-            foreach(var boneNekoCollisionList in _boneNekoCollisionList)
+            foreach (var boneNekoCollisionList in _boneNekoCollisionList)
             {
                 boneNekoCollisionList.nekoCollisionList.ObserveAdd()
-                    .Subscribe(nekoData => {
+                    .Subscribe(nekoData =>
+                    {
                         _nekoCollisionList.AddCollisionData(nekoData.Value);
+                        
+                        // 相手のリストを取得
+                        foreach (var nekoDataOnOpponent in nekoData.Value.gameObject.GetComponent<NekoCollisionList>().nekoCollisionList)
+                        {
+                            // 重複していないか確認
+                            if (nekoDataOnOpponent != gameObject.GetComponent<NekoData>() && !_nekoCollisionList.nekoCollisionList.Contains(nekoDataOnOpponent))
+                                _nekoCollisionList.AddCollisionData(nekoDataOnOpponent);
+                        }
                     })
                     .AddTo(this);
                 boneNekoCollisionList.nekoCollisionList.ObserveRemove()
-                    .Subscribe(nekoData => {
+                    .Subscribe(nekoData =>
+                    {
                         bool isRemove = true;
-                        foreach(var boneNekoCollisionListOther in _boneNekoCollisionList){
-                            if(boneNekoCollisionListOther != boneNekoCollisionList && boneNekoCollisionListOther.nekoCollisionList.Contains(nekoData.Value)){
+                        foreach (var boneNekoCollisionListOther in _boneNekoCollisionList)
+                        {
+                            if (boneNekoCollisionListOther != boneNekoCollisionList && boneNekoCollisionListOther.nekoCollisionList.Contains(nekoData.Value))
+                            {
                                 isRemove = false;
                                 break;
                             }
                         }
-                        if(isRemove)
+                        if (isRemove)
                             _nekoCollisionList.RemoveCollisionData(nekoData.Value);
                     })
                     .AddTo(this);
