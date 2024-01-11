@@ -34,7 +34,7 @@ namespace Game.Manager
             yield return new WaitForSeconds(1f);
 
             yield return StartCoroutine(LoadSceneCo(sceneName));
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+            yield return new WaitUntil(() => SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName)));
 
             SceneState.SetLoadEnd(true);
 
