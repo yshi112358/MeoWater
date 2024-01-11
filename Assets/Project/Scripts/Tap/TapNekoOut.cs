@@ -18,7 +18,8 @@ namespace Game.Tap
 
         public void RunAnimation(NekoData nextNekoData, NekoData currentNekoData)
         {
-            _animator.SetTrigger(currentNekoData.name);
+            if (currentNekoData != null)
+                _animator.SetTrigger(currentNekoData.nekoName);
             _currentNekoData = currentNekoData;
         }
 

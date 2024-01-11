@@ -17,7 +17,7 @@ namespace Game.Neko.Bone
                 .Select(collision => collision.gameObject.GetComponentInParent<NekoData>())
                 .Where(collision => collision != null)
                 .Where(nekoData => nekoData != nekoDataMe)
-                .Where(nekoData => nekoData.name == nekoDataMe.name)
+                .Where(nekoData => nekoData.nekoName == nekoDataMe.nekoName)
                 .Subscribe(nekoData => boneNekoCollisionList.AddNekoCollisionList(nekoData))
                 .AddTo(this);
 
@@ -26,7 +26,7 @@ namespace Game.Neko.Bone
                 .Select(collision => collision.gameObject.GetComponentInParent<NekoData>())
                 .Where(collision => collision != null)
                 .Where(nekoData => nekoData != nekoDataMe)
-                .Where(nekoData => nekoData.name == nekoDataMe.name)
+                .Where(nekoData => nekoData.nekoName == nekoDataMe.nekoName)
                 .Subscribe(nekoData => boneNekoCollisionList.RemoveNekoCollisionList(nekoData))
                 .AddTo(this);
         }

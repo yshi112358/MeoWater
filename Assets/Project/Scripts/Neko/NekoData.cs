@@ -7,9 +7,9 @@ namespace Game.Neko
 {
     public class NekoData : MonoBehaviour
     {
-        public string name => _name;
+        public string nekoName => _nekoName;
 
         [SerializeField]
-        private string _name;
+        private string _nekoName;
     }
 }

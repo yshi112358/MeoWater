@@ -11,9 +11,9 @@ namespace Game.Tap
     public class TapMain : MonoBehaviour
     {
         public NekoData nextNekoData => _nextNekoData;
-        private NekoData _nextNekoData = new NekoData();
+        private NekoData _nextNekoData;
         public NekoData currentNekoData => _currentNekoData;
-        private NekoData _currentNekoData = new NekoData();
+        private NekoData _currentNekoData;
 
         public GameObject[] neko => _neko;
         [SerializeField] private GameObject[] _neko;
@@ -27,7 +27,6 @@ namespace Game.Tap
                 .Interval(System.TimeSpan.FromSeconds(_time))
                 .Subscribe(_ =>
                 {
-                    Debug.Log(_currentNekoData);
                     _currentNekoData = _nextNekoData;
                     _nextNekoData = _neko[Random.Range(0, _neko.Count())].GetComponent<NekoData>();
 

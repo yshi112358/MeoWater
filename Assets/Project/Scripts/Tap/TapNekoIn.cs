@@ -16,7 +16,7 @@ namespace Game.Tap
         {
             if (currentNekoData != null)
                 _animator.SetTrigger("2Out");
-            _animator.SetTrigger(nextNekoData.name);
+            _animator.SetTrigger(nextNekoData.nekoName);
         }
     }
 }

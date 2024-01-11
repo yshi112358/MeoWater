@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5965a5adfc0486d8339498dd1fc5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: White
+  _nekoName: White
 --- !u!114 &5380881331059243083
 MonoBehaviour:
   m_ObjectHideFlags: 0

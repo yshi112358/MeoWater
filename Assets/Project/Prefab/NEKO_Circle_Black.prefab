@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: _name
       value: Black
       objectReference: {fileID: 0}
+    - target: {fileID: -2941244926789018211, guid: 932d0d6918b9146a8900e57f766a8d6f, type: 3}
+      propertyPath: _nekoName
+      value: Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5911883860735074996, guid: 932d0d6918b9146a8900e57f766a8d6f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
