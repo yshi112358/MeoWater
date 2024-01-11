@@ -7,7 +7,6 @@ namespace Game.Home
 {
     public class HomeNekoTap : MonoBehaviour
     {
-        [SerializeField] private SceneStateManager _sceneStateManager;
         [SerializeField] private string _sceneName = "Main";
         private Animator _animator => GetComponent<Animator>();
         public void OnHomeGameNekoTap()
@@ -16,7 +15,7 @@ namespace Game.Home
         }
         public void MoveSceneToGame()
         {
-            _sceneStateManager.LoadScene(_sceneName);
+            SceneStateManager.Instance.LoadScene(_sceneName);
         }
     }
 }

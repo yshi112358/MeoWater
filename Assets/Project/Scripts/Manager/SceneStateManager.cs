@@ -8,13 +8,24 @@ namespace Game.Manager
     public class SceneStateManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _text;
+        public static SceneStateManager Instance { get; private set; }
         void Awake()
         {
+            CheckInstance();
             // シーンがない場合は、最初のシーンをセットする
             if (SceneState.sceneName.Value == null)
                 SceneState.SetSceneName(SceneManager.GetSceneAt(0).name);
-            DontDestroyOnLoad(gameObject);
         }
+
+        private void CheckInstance(){
+            if(Instance == null){
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }else{
+                Destroy(gameObject);
+            }
+        }
+        
         public void LoadScene(string sceneName)
         {
             StartCoroutine(Load(sceneName));
@@ -37,14 +48,18 @@ namespace Game.Manager
             yield return new WaitForSeconds(1f);
             _text.text += "Wait" + "\n";
 
-            var loadingPath = SceneManager.GetSceneByName("Loading");
-            yield return new WaitUntil(() => SceneManager.SetActiveScene(loadingPath));
-            _text.text += "Active: Loading" + "\n";
+            if (activeScene != "Loading")
+            {
+                var loadingPath = SceneManager.GetSceneByName("Loading");
+                _text.text += "Path: Loading" + "\n";
+                yield return new WaitUntil(() => SceneManager.SetActiveScene(loadingPath));
+                _text.text += "Active: Loading" + "\n";
+            }
 
             if (!isAdditive)
                 yield return StartCoroutine(UnLoadSceneCo(activeScene));
             _text.text += "UnLoad: " + activeScene + "\n";
-            
+
             Resources.UnloadUnusedAssets();
             _text.text += "UnloadUnusedAssets" + "\n";
 

@@ -8,13 +8,12 @@ namespace Game.Loading
 {
     public class LoadingOnly : MonoBehaviour
     {
-        [SerializeField] SceneStateManager _sceneStateManager;
-        void Awake()
+        void Start()
         {
             if (CheckOnlyLoading())
             {
-                _sceneStateManager.LoadScene("Title", true);
-                _sceneStateManager.LoadScene("Home", true);
+                SceneStateManager.Instance.LoadScene("Title", true);
+                SceneStateManager.Instance.LoadScene("Home", true);
                 SceneState.SetSceneName("Title");
             }
         }

@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class HomeAnimationFromTitle : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private SceneStateManager _sceneStateManager;
     void Start()
     {
         SceneState.sceneName
@@ -19,6 +18,6 @@ public class HomeAnimationFromTitle : MonoBehaviour
 
     public void UnloadTitle()
     {
-        _sceneStateManager.UnloadScene("Title");
+        SceneStateManager.Instance.UnloadScene("Title");
     }
 }

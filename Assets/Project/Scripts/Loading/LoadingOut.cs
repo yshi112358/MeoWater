@@ -12,7 +12,6 @@ namespace Game.Loading
     public class LoadingOut : MonoBehaviour
     {
         private Animator _animator => GetComponent<Animator>();
-        [SerializeField] SceneStateManager _sceneStateManager;
         void Start()
         {
             SceneState.loadEnd
@@ -23,7 +22,7 @@ namespace Game.Loading
         public void OnLoadingOut()
         {
             SceneState.SetLoadEnd(false);
-            StartCoroutine(_sceneStateManager.UnLoadLoadingSceneCo());
+            StartCoroutine(SceneStateManager.Instance.UnLoadLoadingSceneCo());
         }
     }
 }
