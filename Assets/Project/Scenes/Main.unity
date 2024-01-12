@@ -1564,6 +1564,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919927358}
   m_CullTransparentMesh: 1
+--- !u!1 &947321049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947321051}
+  - component: {fileID: 947321050}
+  m_Layer: 0
+  m_Name: PauseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947321050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947321049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8720155236e594dad86ddc665781e24b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &947321051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947321049}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 723.8204, y: -2474.0686, z: -29.828173}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044687787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1145990163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947321050}
+        m_TargetAssemblyTypeName: Game.Manager.PauseManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1145990163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,11 +2943,6 @@ MonoBehaviour:
   - {fileID: 833892317}
   - {fileID: 1976400757}
   - {fileID: 1913445859}
-  _scoreCupNekoAnimationGeneratorList:
-  - {fileID: 400716012}
-  - {fileID: 833892316}
-  - {fileID: 1976400756}
-  - {fileID: 1913445858}
 --- !u!4 &1551039419
 Transform:
   m_ObjectHideFlags: 0
@@ -4759,3 +4810,4 @@ SceneRoots:
   - {fileID: 509863775}
   - {fileID: 1551039419}
   - {fileID: 1882099768}
+  - {fileID: 947321051}
