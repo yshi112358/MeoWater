@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Game.Manager;
 using Game.Neko;
 using UnityEngine;
-using UniRx;
-using UniRx.Triggers;
 
 namespace Game.Tap
 {
