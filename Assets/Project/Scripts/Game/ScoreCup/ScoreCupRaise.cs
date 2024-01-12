@@ -7,7 +7,7 @@ namespace Game.Score
         [SerializeField] private float _raiseSpeed = 10f;
         public void Raise()
         {
-            transform.position += new Vector3(0, _raiseSpeed, 0);
+            GetComponent<RectTransform>().anchoredPosition += new Vector2(0, _raiseSpeed);
         }
     }
 }

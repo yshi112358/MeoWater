@@ -10,18 +10,19 @@ namespace Game.Score
         [SerializeField] private Camera _targetCamera;
         public void RunAnimation(Vector2 vector2)
         {
-            var animation = Instantiate(_scoreCupData.nekoAnimation, Vector3.zero, Quaternion.identity, transform);
-            animation.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-            animation.GetComponent<ScoreCupNekoAnimationDestroy>().SetScoreCupRaise(GetComponent<ScoreCupRaise>());
-            var size = _targetCamera.WorldToScreenPoint(vector2);
-            var basis = GetComponent<RectTransform>().position;
-            var gap = size - basis;
-            Debug.Log(size);
-            Debug.Log(basis);
+            var animationObject = Instantiate(_scoreCupData.nekoAnimation, Vector3.zero, Quaternion.identity, transform);
+            var rect = animationObject.GetComponent<RectTransform>();
 
-            var rect= animation.GetComponent<RectTransform>();
-            rect.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(gap.y, gap.x) * Mathf.Rad2Deg + 90);
-            rect.sizeDelta = new Vector2(rect.sizeDelta.x, gap.magnitude);
+            rect.anchoredPosition = Vector3.zero;
+            animationObject.GetComponent<ScoreCupNekoAnimationDestroy>().SetScoreCupRaise(transform.GetChild(0).GetComponent<ScoreCupRaise>());
+
+            var pos = Vector2.zero;
+            var screenPos = RectTransformUtility.WorldToScreenPoint(_targetCamera, vector2);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), screenPos, _targetCamera, out pos);
+            Debug.Log(pos);
+
+            rect.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg + 90);
+            rect.sizeDelta = new Vector2(rect.sizeDelta.x, pos.magnitude);
         }
     }
 }
