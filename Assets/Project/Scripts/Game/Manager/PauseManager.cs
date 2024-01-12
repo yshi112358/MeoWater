@@ -10,5 +10,10 @@ namespace Game.Manager
         {
             Time.timeScale = 0;
         }
+
+        public void Resume()
+        {
+            Time.timeScale = 1;
+        }
     }
 }
