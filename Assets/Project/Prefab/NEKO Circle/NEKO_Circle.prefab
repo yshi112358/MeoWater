@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: -2941244926789018211}
   - component: {fileID: 5380881331059243083}
   - component: {fileID: 5442653162871401856}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: NEKO_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
