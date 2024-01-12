@@ -13,17 +13,17 @@ public class HomeGyro : MonoBehaviour
         _playerInputEventProvider.EnableGyro();
 
         var rect = GetComponent<RectTransform>();
-        _defoultPosition = rect.position.x;
+        _defoultPosition = rect.anchoredPosition.x;
         _playerInputEventProvider.Move
             .Subscribe(x =>
             {
-                var gap = rect.position.x - _defoultPosition + x * _moveDistance;
+                var gap = rect.anchoredPosition.x - _defoultPosition + x * _moveDistance;
                 if (gap < -100f)
-                    rect.position = new Vector2(_defoultPosition + -100f, transform.position.y);
+                    rect.anchoredPosition = new Vector2(_defoultPosition + -100f, rect.anchoredPosition.y);
                 else if (gap > 100f)
-                    rect.position = new Vector2(_defoultPosition + 100f, transform.position.y);
+                    rect.anchoredPosition = new Vector2(_defoultPosition + 100f, rect.anchoredPosition.y);
                 else
-                    rect.position += new Vector3(x * _moveDistance, 0, 0);
+                    rect.anchoredPosition += new Vector2(x * _moveDistance, 0);
             }).AddTo(this);
     }
 }
