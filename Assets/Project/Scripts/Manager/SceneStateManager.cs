@@ -30,23 +30,20 @@ namespace Game.Manager
         {
             StartCoroutine(Load(sceneName));
         }
-        public void LoadScene(string sceneName, bool isAdditive)
+        public void LoadScene(string sceneName, bool isAdditive, bool setLoadEnd)
         {
-            StartCoroutine(Load(sceneName, isAdditive));
+            StartCoroutine(Load(sceneName, isAdditive, setLoadEnd));
         }
         public void UnloadScene(string sceneName)
         {
             StartCoroutine(UnLoadSceneCo(sceneName));
         }
 
-        private IEnumerator Load(string sceneName, bool isAdditive = false)
+        private IEnumerator Load(string sceneName, bool isAdditive = false, bool setLoadEnd = true)
         {
             var activeScene = SceneManager.GetActiveScene().name;
             yield return StartCoroutine(LoadSceneCo("Loading"));
             _text.text += "Loading" + "\n";
-
-            yield return new WaitForSeconds(1f);
-            _text.text += "Wait" + "\n";
 
             if (activeScene != "Loading")
             {
@@ -72,7 +69,11 @@ namespace Game.Manager
             yield return new WaitUntil(() => SceneManager.SetActiveScene(scenePath));
             _text.text += "Active: " + sceneName + "\n";
 
-            SceneState.SetLoadEnd(true);
+            // yield return new WaitForSeconds(5f);
+            _text.text += "Wait" + "\n";
+
+            if(setLoadEnd)
+                SceneState.SetLoadEnd(true);
             _text.text += "LoadEnd" + "\n";
 
         }

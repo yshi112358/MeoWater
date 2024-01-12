@@ -12,8 +12,8 @@ namespace Game.Loading
         {
             if (CheckOnlyLoading())
             {
-                SceneStateManager.Instance.LoadScene("Title", true);
-                SceneStateManager.Instance.LoadScene("Home", true);
+                SceneStateManager.Instance.LoadScene("Title", true, false);
+                SceneStateManager.Instance.LoadScene("Home", true, true);
                 SceneState.SetSceneName("Title");
             }
         }

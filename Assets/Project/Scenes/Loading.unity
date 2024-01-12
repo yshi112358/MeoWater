@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneStateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4947804843094401823, guid: 8f0995153112f4648a6e0e671cddeda7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
