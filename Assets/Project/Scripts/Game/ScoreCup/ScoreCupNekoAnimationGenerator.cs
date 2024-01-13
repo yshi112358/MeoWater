@@ -8,13 +8,14 @@ namespace Game.Score
     {
         [SerializeField] private ScoreCupData _scoreCupData;
         [SerializeField] private Camera _targetCamera;
+        [SerializeField] private ScoreCupRaise _scoreCupRaise;
         public void RunAnimation(Vector2 vector2)
         {
             var animationObject = Instantiate(_scoreCupData.nekoAnimation, Vector3.zero, Quaternion.identity, transform);
             var rect = animationObject.GetComponent<RectTransform>();
 
             rect.anchoredPosition = Vector3.zero;
-            animationObject.GetComponent<ScoreCupNekoAnimationDestroy>().SetScoreCupRaise(transform.GetChild(0).GetComponent<ScoreCupRaise>());
+            animationObject.GetComponent<ScoreCupNekoAnimationDestroy>().SetScoreCupRaise(_scoreCupRaise);
 
             var pos = Vector2.zero;
             var screenPos = RectTransformUtility.WorldToScreenPoint(_targetCamera, vector2);
