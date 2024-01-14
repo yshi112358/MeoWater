@@ -7,7 +7,7 @@ namespace Game.Tap
     {
         private Animator _animator => GetComponent<Animator>();
 
-        public void RunAnimation(NekoData nextNekoData, NekoData currentNekoData)
+        public void RunAnimation(NekoDataBase nextNekoData, NekoDataBase currentNekoData)
         {
             if (currentNekoData != null)
                 _animator.SetTrigger("2Out");

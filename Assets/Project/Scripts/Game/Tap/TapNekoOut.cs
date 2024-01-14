@@ -6,11 +6,11 @@ namespace Game.Tap
     public class TapNekoOut : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private NekoMaker _nekoMaker;
+        [SerializeField] private TapNekoMaker _nekoMaker;
 
-        private NekoData _currentNekoData;
+        private NekoDataBase _currentNekoData;
 
-        public void RunAnimation(NekoData nextNekoData, NekoData currentNekoData)
+        public void RunAnimation(NekoDataBase nextNekoData, NekoDataBase currentNekoData)
         {
             if (currentNekoData != null)
                 _animator.SetTrigger(currentNekoData.nekoName);

@@ -41,6 +41,8 @@ namespace Game.Manager
 
         private IEnumerator Load(string sceneName, bool isAdditive = false, bool setLoadEnd = true)
         {
+            SceneState.SetSceneName(sceneName);
+
             var activeScene = SceneManager.GetActiveScene().name;
             yield return StartCoroutine(LoadSceneCo("Loading"));
             _text.text += "Loading" + "\n";
@@ -75,7 +77,6 @@ namespace Game.Manager
             if(setLoadEnd)
                 SceneState.SetLoadEnd(true);
             _text.text += "LoadEnd" + "\n";
-
         }
 
         private IEnumerator LoadSceneCo(string sceneName)

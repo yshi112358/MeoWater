@@ -4,6 +4,7 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 using Game.Manager;
+using Game.Score;
 
 namespace Game.Neko
 {
@@ -12,13 +13,16 @@ namespace Game.Neko
         private NekoCollisionList _nekoCollisionList => GetComponent<NekoCollisionList>();
         private NekoDestroyManager _nekoDestroyManager => FindObjectOfType<NekoDestroyManager>();
         private bool _isDestroy = false;
+
+        [SerializeField] SelectionData _selectionData;
         void Start()
         {
             _nekoCollisionList.nekoCollisionList.ObserveAdd()
                 .Where(_ => !_isDestroy)
                 .Subscribe(x =>
                 {
-                    if (_nekoCollisionList.nekoCollisionList.Count >= 2)
+                    var nekoCount = _nekoCollisionList.nekoCollisionList.Count;
+                    if (nekoCount >= 2)
                     {
                         var sum = Vector2.zero;
                         foreach (var nekoData in _nekoCollisionList.nekoCollisionList)
@@ -27,10 +31,11 @@ namespace Game.Neko
                         for (int i = 0; i < transform.childCount; i++)
                             sum += (Vector2)transform.GetChild(i).position;
 
-                        sum /= (_nekoCollisionList.nekoCollisionList.Count + 1) * 8;
+                        sum /= (nekoCount + 1) * 8;
 
-
-                        _nekoDestroyManager.OnDestroyNeko(x.Value.nekoName, sum);
+                        var nekoIndex = NekoSelectionManager.GetIndex(x.Value.nekoName);
+                        _nekoDestroyManager.OnDestroyNeko(nekoIndex, sum);
+                        ScoreManager.AddScore(nekoIndex, nekoCount + 1);
                         foreach (var nekoData in _nekoCollisionList.nekoCollisionList)
                         {
                             nekoData.GetComponent<NekoDestroy>().DestroyNeko();
