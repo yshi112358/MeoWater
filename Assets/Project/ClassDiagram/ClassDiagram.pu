@@ -1,0 +1,233 @@
+@startuml
+left to right direction
+
+namespace Neko{
+	class NekoMain <<MonoBehaviour>>{
+	}
+	class NekoData <<MonoBehaviour>>{
+		+string name
+		+List<NekoData> nekoCollisionList
+		+void AddNekoData(NekoData nekoData)
+		+void RemoveNekoData(NekoData nekoData)
+	}
+
+
+	namespace Collision{
+		namespace Bone{
+			class BoneNekoCollisionList{
+				+List<NekoData> nekoCollisionList
+				+void AddNekoData(NekoData nekoData)
+				+void RemoveNekoData(NekoData nekoData)
+			}
+			
+			class BoneNekoCollision{
+				+void OnCollisionEnter2D(Collision collision)
+				+void OnCollisionExit2D(Collision collision)
+			}
+			note top of BoneNekoCollision
+				Boneの衝突判定
+				BoneNekoCollisionListにどんどん追加していく
+			end note
+			BoneNekoCollision --> BoneNekoCollisionList
+		}
+		class NekoCollisionList <<MonoBehaviour>>{
+			+ReactiveCollection<NekoData> nekoCollisionList
+			-void AddNekoData(NekoData nekoData)
+			-void RemoveNekoData(NekoData nekoData)
+		}
+		class NekoCollision <<MonoBehaviour>>{
+			+Update()
+		}
+		note left of NekoCollisionList
+			衝突しているNekoDataを保持し、状態を監視する
+			Update関数でBoneの状態を全て取得し、重複の無いように追加、削除を行う
+		end note
+	}
+
+	class NekoDrawer <<MonoBehaviour>>{
+		-Mesh CreatePlaneMesh()
+	}
+	note top of NekoDrawer
+		ネコの描画
+		Updateで毎フレームMesh.SetVerticesで頂点を更新する
+	end note
+
+	class NekoMaker <<MonoBehaviour>>{
+		+void MakeNeko(NekoData nekoData)
+	}
+
+	class NekoDestroy <<MonoBehaviour>>{
+        -NekoCollisionList _nekoCollisionList => GetComponent<NekoCollisionList>();
+        -NekoDestroyManager _nekoDestroyManager => FindObjectOfType<NekoDestroyManager>();
+        -bool _isDestroy = false;
+        
+		+void DestroyNeko()
+    }
+}
+Neko.Collision.NekoCollision->Neko.Collision.Bone.BoneNekoCollisionList : 監視
+Neko.Collision.NekoCollision->Neko.Collision.NekoCollisionList
+Neko.NekoDestroy --> Neko.Collision.NekoCollisionList
+
+namespace Player{
+	namespace InputImpls{
+		class PlayerInputEventProvider{
+			+ReactivePropertiy<float> amount
+		}
+		class DebugInputEventProvider{
+			+ReactivePropertiy<float> amount
+		}
+		class AutoInputEventProvider{
+			+ReactivePropertiy<float> amount
+		}
+		note top of AutoInputEventProvider
+			自動で入力を行う
+			展示やチュートリアルなど状況に応じてアタッチ
+			することで、実装の手間を省くことができる
+		end note
+	}
+	interface IInputEventProvider{
+		+ReactivePropertiy<float> amount
+	}
+
+	class PlayerMove{
+		
+	}
+	PlayerMove --> IInputEventProvider
+}
+Player.PlayerMove --> Manager.SettingManager
+Player.InputImpls.PlayerInputEventProvider --|> Player.IInputEventProvider
+Player.InputImpls.DebugInputEventProvider --|> Player.IInputEventProvider
+Player.InputImpls.AutoInputEventProvider --|> Player.IInputEventProvider
+
+namespace Tap{
+	class TapMain <<MonoBehaviour>>{
+		+NekoData nextNekoData
+		+NekoData currentNekoData
+		+List<GameObject> Neko
+		-float _time
+	}
+
+	class TapNekoIn <<MonoBehaviour>>{
+		-Animator _animator
+		+void RunAnimation(NekoData nextNekoData, NekoData currentNekoData)
+	}
+
+	class TapNekoOut <<MonoBehaviour>>{
+		-Animator _animator
+		+void RunAnimation(NekoData nextNekoData, NekoData currentNekoData)
+		+void DropNeko()
+	}
+	note top of TapNekoOut
+		アニメーションが終了したら、
+		DropNekoを呼び出す
+	end note
+
+	TapMain --> TapNekoIn
+	TapMain --> TapNekoOut
+}
+Tap.TapNekoOut ---> Neko.NekoMaker
+
+namespace UI{
+	class ScoreUI{
+		+void SetScore(int score)
+	}
+	class GameStateUI{
+		+void SetGameState(GameState gameState)
+	}
+}
+
+namespace Score{
+	class ScoreCupData
+	class ScoreCupNekoAnimationDestroy
+	class ScoreCupNekoAnimationGenerator
+	class ScoreCupRaise
+}
+
+namespace Deck{
+	class DeckMain{
+		+List<GameObject> neko
+		+void AddNekoData(NekoData nekoData)
+		+void RemoveNekoData(NekoData nekoData)
+	}
+	class DeckDrawer{
+		+void SetNekoDataList(List<NekoData> nekoDataList)
+	}
+
+}
+
+namespace Loading{
+	class LoadingOnly<<MonoBehaviour>>{
+        -bool CheckOnlyLoading()
+    }
+    class LoadingOut<<MonoBehaviour>>{
+        - Animator _animator;
+        + void OnLoadingOut()
+    }
+	note left of LoadingOut
+		Loadingのアニメーションが終了したら、
+		OnLoadingOutを呼び出す
+	end note
+}
+
+namespace Manager{
+	class NekoManager{
+		+NekoData nextNekoData
+	}
+	class ScoreManager{
+
+	}
+	class GameStateManager{
+
+	}
+	class SettingManager{
+		+float sensitivity
+
+	}
+	class InputSensitiveManager{
+		+float sensitivity
+		+void SetSensitivity(float sensitivity)
+	}
+	class InputManager{
+		+IInputEventProvider inputEventProvider
+	}
+	InputManager --> SettingManager
+
+	class NekoDestroyManager{
+		-List<ScoreCupData> _scoreCupDataList = new List<ScoreCupData>(4);
+        
+		+void OnDestroyNeko(string nekoName,Vector2 vector2)
+	}
+
+	' シーン遷移 ' 
+	class SceneStateManager <<Mono>>{
+        +static SceneStateManager Instance { get; private set; }
+        -void CheckInstance()
+        
+        +void LoadScene(string sceneName)
+        +void LoadScene(string sceneName, bool isAdditive, bool setLoadEnd)
+        +void UnloadScene(string sceneName)
+
+        -IEnumerator Load(string sceneName, bool isAdditive = false, bool setLoadEnd = true)
+        -IEnumerator LoadSceneCo(string sceneName)
+
+        -IEnumerator UnLoadSceneCo(string sceneName)
+        +IEnumerator UnLoadLoadingSceneCo()
+	}
+	class SceneState{
+		+static ReadOnlyReactiveProperty<string> sceneName
+		+static ReadOnlyReactiveProperty<bool> loadEnd
+
+        +static void SetSceneName(string sceneName)
+        +static void SetLoadEnd(bool loadEnd)
+	}
+	SceneStateManager --> SceneState
+}
+Neko.NekoMaker --> Manager.NekoManager 
+Loading.LoadingOnly --> Manager.SceneStateManager
+Loading.LoadingOnly --> Manager.SceneState
+Loading.LoadingOut --> Manager.SceneStateManager
+Loading.LoadingOut --> Manager.SceneState
+Neko.NekoDestroy --> Manager.NekoDestroyManager
+Manager.NekoDestroyManager --> Score.ScoreCupData
+
+@enduml
