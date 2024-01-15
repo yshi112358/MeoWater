@@ -1324,7 +1324,6 @@ GameObject:
   - component: {fileID: -2946856285088281636}
   - component: {fileID: -4007055364286902611}
   - component: {fileID: -2941244926789018211}
-  - component: {fileID: 5380881331059243083}
   - component: {fileID: 5442653162871401856}
   m_Layer: 0
   m_Name: NEKO_Circle
@@ -1455,18 +1454,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nekoName: White
---- !u!114 &5380881331059243083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7683799545617557599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c120b5bb6aa4731a58ad5d00fc96d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5442653162871401856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74ebb5c9cdab46c08aa869f475fdc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectionData: {fileID: 0}
 --- !u!1 &8167746679921827895
 GameObject:
   m_ObjectHideFlags: 0

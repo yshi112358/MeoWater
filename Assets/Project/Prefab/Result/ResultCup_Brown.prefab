@@ -188,6 +188,11 @@ PrefabInstance:
       addedObject: {fileID: 4692107554114264838}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+--- !u!95 &5280224344538794150 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7372399063966670815, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+  m_PrefabInstance: {fileID: 3393222572282550137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6805491801667221952 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8171450910175145657, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
@@ -281,6 +286,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5895048861722837895, guid: 0167966cda7624a4ba77c6d7cfcb16c5, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5280224344538794150}
     - target: {fileID: 6785964998336292778, guid: 0167966cda7624a4ba77c6d7cfcb16c5, type: 3}
       propertyPath: m_Name
       value: Cup Result Parent
