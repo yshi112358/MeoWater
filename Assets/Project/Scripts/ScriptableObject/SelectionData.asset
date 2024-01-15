@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8f4bdc68d943c3a3f4f88b08e3d80, type: 3}
   m_Name: SelectionData
   m_EditorClassIdentifier: 
-  _level: 1
+  _level: 0
   _location: 0
   _neko: 00000000010000000200000003000000

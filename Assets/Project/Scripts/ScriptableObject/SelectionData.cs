@@ -26,4 +26,9 @@ public class SelectionData : ScriptableObject
     [SerializeField] private int _level = 0;
     [SerializeField] private int _location = 0;
     [SerializeField] private List<int> _neko = new List<int>();
+    
+    public void SetLevel(int level)
+    {
+        _level = level;
+    }
 }
