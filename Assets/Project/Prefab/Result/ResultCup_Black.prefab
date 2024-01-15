@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -33,6 +37,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Rebind
       objectReference: {fileID: 0}
@@ -41,15 +49,43 @@ PrefabInstance:
       value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8329040234948993040}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Fall
       objectReference: {fileID: 0}
     - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Fall
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: _unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 83772878656733614, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2230132327007644734, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}

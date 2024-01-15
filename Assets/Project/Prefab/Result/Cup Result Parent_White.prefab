@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cup Result Parent_White
       objectReference: {fileID: 0}
+    - target: {fileID: 2455122246213228596, guid: 457c05fcb4a1d490898ec7333083cace, type: 3}
+      propertyPath: _unityEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455122246213228596, guid: 457c05fcb4a1d490898ec7333083cace, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455122246213228596, guid: 457c05fcb4a1d490898ec7333083cace, type: 3}
+      propertyPath: _unityEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5240904436554525868, guid: 457c05fcb4a1d490898ec7333083cace, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

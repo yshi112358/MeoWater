@@ -20,11 +20,9 @@ namespace Game.Manager
                 {
                     _pauseManager.Pause();
                     _endPanel.SetActive(true);
+                    _unityEvent.Invoke();
                 })
                 .AddTo(this);
-        }
-        public void InvokeEvent(){
-            _unityEvent.Invoke();
         }
     }
 }
