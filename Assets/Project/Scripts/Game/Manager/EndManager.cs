@@ -21,6 +21,7 @@ namespace Game.Manager
                     _pauseManager.Pause();
                     _endPanel.SetActive(true);
                     _unityEvent.Invoke();
+                    Time.timeScale = 0;
                 })
                 .AddTo(this);
         }

@@ -13,7 +13,7 @@ namespace Game.Manager
 
         public void Resume()
         {
-            Time.timeScale = 1;
+            Time.timeScale = Mathf.Clamp(LevelManager.speed, 1f, LevelManager.speedMax);
         }
     }
 }
