@@ -13,8 +13,8 @@ namespace Game.Manager
         {
             CheckInstance();
             // シーンがない場合は、最初のシーンをセットする
-            if (SceneState.sceneName.Value == null)
-                SceneState.SetSceneName(SceneManager.GetSceneAt(0).name);
+            // if (SceneState.sceneName.Value == null)
+            //     SceneState.SetSceneName(SceneManager.GetSceneAt(0).name);
         }
 
         private void CheckInstance(){
@@ -34,15 +34,17 @@ namespace Game.Manager
         {
             StartCoroutine(Load(sceneName, isAdditive, setLoadEnd));
         }
+        public void LoadScene(string sceneName, bool isAdditive, bool setLoadEnd, bool setSceneName)
+        {
+            StartCoroutine(Load(sceneName, isAdditive, setLoadEnd, setSceneName));
+        }
         public void UnloadScene(string sceneName)
         {
             StartCoroutine(UnLoadSceneCo(sceneName));
         }
 
-        private IEnumerator Load(string sceneName, bool isAdditive = false, bool setLoadEnd = true)
+        private IEnumerator Load(string sceneName, bool isAdditive = false, bool setLoadEnd = true, bool setSceneName = true)
         {
-            SceneState.SetSceneName(sceneName);
-
             var activeScene = SceneManager.GetActiveScene().name;
             yield return StartCoroutine(LoadSceneCo("Loading"));
             _text.text += "Loading" + "\n";
@@ -62,6 +64,8 @@ namespace Game.Manager
             Resources.UnloadUnusedAssets();
             _text.text += "UnloadUnusedAssets" + "\n";
 
+            yield return new WaitForSeconds(10f);
+
             yield return StartCoroutine(LoadSceneCo(sceneName));
             _text.text += "Load: " + sceneName + "\n";
 
@@ -77,10 +81,14 @@ namespace Game.Manager
             if(setLoadEnd)
                 SceneState.SetLoadEnd(true);
             _text.text += "LoadEnd" + "\n";
+
+            if (setSceneName)
+                SceneState.SetSceneName(sceneName);
         }
 
         private IEnumerator LoadSceneCo(string sceneName)
         {
+            SceneState.SetSceneName("Loading");
             var isSceneExist = false;
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {

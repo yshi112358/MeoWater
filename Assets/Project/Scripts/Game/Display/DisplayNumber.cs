@@ -17,6 +17,6 @@ public class DisplayNumber : MonoBehaviour
             .Subscribe(x =>
             {
                 GetComponent<Image>().sprite = _numberSpriteList[x / 30];
-            });
+            }).AddTo(this);
     }
 }

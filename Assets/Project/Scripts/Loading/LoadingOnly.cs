@@ -12,9 +12,9 @@ namespace Game.Loading
         {
             if (CheckOnlyLoading())
             {
-                SceneStateManager.Instance.LoadScene("Title", true, false);
-                SceneStateManager.Instance.LoadScene("Home", true, true);
-                SceneState.SetSceneName("Title");
+                SceneState.SetSceneName("Loading");
+                SceneStateManager.Instance.LoadScene("Home", true, false, false);
+                SceneStateManager.Instance.LoadScene("Title", true, true, true);
             }
         }
         private bool CheckOnlyLoading()

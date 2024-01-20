@@ -17,6 +17,12 @@ public class LevelManager : MonoBehaviour
             {
                 speed = 1f + x / _levelSpan;
                 Time.timeScale = Mathf.Clamp(speed, 1f, speedMax);
-            });
+            }).AddTo(this);
+    }
+
+    public void ResetSpeed()
+    {
+        speed = 1f;
+        Time.timeScale = 1f;
     }
 }

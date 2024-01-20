@@ -266,11 +266,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e53f1096c4d549ecb6f2c9e6de5b1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseManager: {fileID: 947321050}
-  _endPanel: {fileID: 184625870}
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1276942412}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: ResetSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 947321050}
+        m_TargetAssemblyTypeName: Game.Manager.PauseManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 196137345}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -282,6 +304,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 184625870}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &145747363
 GameObject:
@@ -473,7 +507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 196137346}
   - component: {fileID: 196137349}
-  - component: {fileID: 196137348}
   - component: {fileID: 196137347}
   m_Layer: 0
   m_Name: Cup Camera
@@ -541,14 +574,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &196137348
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196137345}
-  m_Enabled: 1
 --- !u!20 &196137349
 Camera:
   m_ObjectHideFlags: 0
@@ -2099,7 +2124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
@@ -2108,14 +2132,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2253,6 @@ GameObject:
   m_Component:
   - component: {fileID: 556148939}
   - component: {fileID: 556148938}
-  - component: {fileID: 556148937}
   - component: {fileID: 556148936}
   m_Layer: 0
   m_Name: All Camera
@@ -2293,14 +2308,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &556148937
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556148935}
-  m_Enabled: 1
 --- !u!20 &556148938
 Camera:
   m_ObjectHideFlags: 0
@@ -4912,7 +4919,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1245014223}
   - component: {fileID: 1245014222}
-  - component: {fileID: 1245014221}
   - component: {fileID: 1245014220}
   m_Layer: 0
   m_Name: Back Camera
@@ -4966,14 +4972,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1245014221
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245014219}
-  m_Enabled: 1
 --- !u!20 &1245014222
 Camera:
   m_ObjectHideFlags: 0
@@ -5190,9 +5188,9 @@ RectTransform:
   - {fileID: 570226352}
   m_Father: {fileID: 354184153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493, y: 1012}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 92, y: -254}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1337368691
@@ -7262,6 +7260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _max: 1.5
 --- !u!114 &1846611320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7479,6 +7478,10 @@ PrefabInstance:
     - target: {fileID: 3453834334415363486, guid: 8f0995153112f4648a6e0e671cddeda7, type: 3}
       propertyPath: m_Name
       value: SceneStateManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453834334415363486, guid: 8f0995153112f4648a6e0e671cddeda7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4947804843094401823, guid: 8f0995153112f4648a6e0e671cddeda7, type: 3}
       propertyPath: m_IsActive
@@ -8547,7 +8550,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2057809561}
   - component: {fileID: 2057809564}
-  - component: {fileID: 2057809563}
   - component: {fileID: 2057809562}
   m_Layer: 0
   m_Name: Non Effect Camera
@@ -8615,14 +8617,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &2057809563
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2057809560}
-  m_Enabled: 1
 --- !u!20 &2057809564
 Camera:
   m_ObjectHideFlags: 0

@@ -13,7 +13,8 @@ public class HomeAnimationFromTitle : MonoBehaviour
     {
         SceneState.sceneName
             .Where(sceneName => sceneName == "Home")
-            .Subscribe(_ => _animator.SetTrigger("Home"));
+            .Subscribe(_ => _animator.SetTrigger("Home"))
+            .AddTo(this);
     }
 
     public void UnloadTitle()

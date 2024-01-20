@@ -14,6 +14,7 @@ public class ResultScoreCupAnimationCounter : MonoBehaviour
     private int index = 0;
     void Start()
     {
+        _counter.Value = 0;
         foreach (var cup in ResultScoreCupGenerator.cupList)
         {
             if (transform.IsChildOf(cup.transform))
