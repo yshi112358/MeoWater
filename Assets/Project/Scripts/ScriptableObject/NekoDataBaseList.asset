@@ -18,18 +18,22 @@ MonoBehaviour:
     _nekoCup: {fileID: 3496514690337125241, guid: c0401bbaa107a48cc9a8b66a633a679c, type: 3}
     _nekoCupResult: {fileID: 8235086108414504877, guid: fdf4da5a1d8924f8f85ec5fe5616d18d, type: 3}
     _nekoCupCollection: {fileID: 6785964998336292778, guid: 3c24226960ff5450b888e7cbd828aae0, type: 3}
+    _bookDetail: {fileID: 4381612617681348396, guid: bd0039c69218144089f243290371bf90, type: 3}
   - _nekoName: Black
     _nekoPrefab: {fileID: 3722150829117926948, guid: 8d765bf0293c840d782eaac8daeee0b0, type: 3}
     _nekoCup: {fileID: 3496514690337125241, guid: c4001f35312784409b01b5fb5b008dfe, type: 3}
     _nekoCupResult: {fileID: 8235086108414504877, guid: c4a463eccbb4f46cba00f3e907b7abcb, type: 3}
     _nekoCupCollection: {fileID: 6785964998336292778, guid: d407db222f02a479c828a79046530c7e, type: 3}
+    _bookDetail: {fileID: 4381612617681348396, guid: a44ed2cd6a1174ed9b8183c593475feb, type: 3}
   - _nekoName: Brown
     _nekoPrefab: {fileID: 3722150829117926948, guid: e6c6c434eccc24105a15bc6984729cb2, type: 3}
     _nekoCup: {fileID: 3496514690337125241, guid: 7887b05428f434dd1b729b39a8348c43, type: 3}
     _nekoCupResult: {fileID: 8235086108414504877, guid: 9d7431af1813b47e99460d1067398c5e, type: 3}
     _nekoCupCollection: {fileID: 6785964998336292778, guid: 0167966cda7624a4ba77c6d7cfcb16c5, type: 3}
+    _bookDetail: {fileID: 4381612617681348396, guid: 68d777f3ec247461f809f966f9f0e56f, type: 3}
   - _nekoName: Mike
     _nekoPrefab: {fileID: 3722150829117926948, guid: afae7fd7e8910483189ead2dc855e1c3, type: 3}
     _nekoCup: {fileID: 3496514690337125241, guid: 5c15d71d6ec4f46b5961310619ade2d1, type: 3}
     _nekoCupResult: {fileID: 8235086108414504877, guid: 02345145f8a5e4993ba5a254a9d8126b, type: 3}
     _nekoCupCollection: {fileID: 6785964998336292778, guid: fa9c246ee91b344ceba36771d15470c9, type: 3}
+    _bookDetail: {fileID: 4381612617681348396, guid: 7b508661e081a44f4b3a0db486d31e99, type: 3}

@@ -110,21 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa42a271b5094ab199952bb84ea0e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Fall
-          m_BoolArgument: 0
-        m_CallState: 2
+  _unityEvents: []
 --- !u!1 &1477667549654334851
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11a7489bd2ad2452b809cedbf99dcbfc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c7b2e72db7644cf79eaba6da5734fd7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -267,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 62f5fc4373b3243999453d10388a15a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b48c7b872c3ec494595f9a2e19a7e90e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -452,6 +438,10 @@ PrefabInstance:
     - target: {fileID: 7448329533459858955, guid: 290e81857292a42959f0115a5b9897a4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787140777957205484, guid: 290e81857292a42959f0115a5b9897a4, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8787140777957205484, guid: 290e81857292a42959f0115a5b9897a4, type: 3}
       propertyPath: m_PreserveAspect

@@ -70,7 +70,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &5686320988324727700
@@ -116,7 +116,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.9899492, y: 0}
+  m_ConnectedAnchor: {x: 0.98994917, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.5
@@ -158,7 +158,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.15, y: 0.35}
+  m_ConnectedAnchor: {x: 0.15000002, y: 0.35}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -257,7 +257,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &2079620399779305276
@@ -303,7 +303,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.98994935, y: -0.000000059604638}
+  m_ConnectedAnchor: {x: 0.98994935, y: -0.000000054186035}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.5
@@ -324,7 +324,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14999996, y: 0.3499999}
+  m_ConnectedAnchor: {x: 0.14999998, y: 0.3499999}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -345,7 +345,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14999995, y: -0.35000002}
+  m_ConnectedAnchor: {x: 0.14999996, y: -0.35000002}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -444,7 +444,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &8704290375114871197
@@ -532,7 +532,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.15, y: -0.35}
+  m_ConnectedAnchor: {x: 0.15000002, y: -0.35}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -631,7 +631,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &7911178082971621232
@@ -698,7 +698,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142136, y: 0.35355335}
+  m_ConnectedAnchor: {x: 0.14142133, y: 0.35355332}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -719,7 +719,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142141, y: -0.35355338}
+  m_ConnectedAnchor: {x: 0.1414214, y: -0.35355344}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -818,7 +818,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &1789405360883632150
@@ -885,7 +885,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142133, y: -0.35355335}
+  m_ConnectedAnchor: {x: 0.14142132, y: -0.35355335}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -906,7 +906,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142132, y: 0.3535534}
+  m_ConnectedAnchor: {x: 0.14142132, y: 0.35355344}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -1005,7 +1005,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &3510153777731226523
@@ -1072,7 +1072,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142132, y: -0.3535533}
+  m_ConnectedAnchor: {x: 0.14142129, y: -0.3535533}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -1093,7 +1093,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142133, y: 0.35355335}
+  m_ConnectedAnchor: {x: 0.14142132, y: 0.35355335}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -1192,7 +1192,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &5797366208243667274
@@ -1238,7 +1238,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.9899495, y: 0.00000011920929}
+  m_ConnectedAnchor: {x: 0.9899496, y: 0.00000010837209}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.5
@@ -1259,7 +1259,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14999996, y: -0.3499999}
+  m_ConnectedAnchor: {x: 0.14999998, y: -0.3499999}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -1325,6 +1325,8 @@ GameObject:
   - component: {fileID: -4007055364286902611}
   - component: {fileID: -2941244926789018211}
   - component: {fileID: 5442653162871401856}
+  - component: {fileID: 1855458080104726050}
+  - component: {fileID: 2724773841987025045}
   m_Layer: 0
   m_Name: NEKO_Circle
   m_TagString: Neko
@@ -1342,7 +1344,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 585608598185695245}
@@ -1467,6 +1469,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionData: {fileID: 0}
+--- !u!114 &1855458080104726050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683799545617557599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb5e5014f40d6948815a7be8b174ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2724773841987025045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683799545617557599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb219b23cdf4b314f94a27bca3cc8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8167746679921827895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1563,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.16, y: 0}
+  m_Offset: {x: 0.19, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
 --- !u!50 &6932434251437252645
@@ -1604,7 +1630,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.1414213, y: -0.35355335}
+  m_ConnectedAnchor: {x: 0.14142129, y: -0.35355335}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3
@@ -1625,7 +1651,7 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.14142132, y: 0.3535533}
+  m_ConnectedAnchor: {x: 0.14142129, y: 0.3535533}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.3

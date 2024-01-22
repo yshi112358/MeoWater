@@ -55,7 +55,7 @@ MonoBehaviour:
   - scene: Title
     bgm: {fileID: 8300000, guid: a5a8c0227bcf84c8db22987c994ad90a, type: 3}
   - scene: Main
-    bgm: {fileID: 0}
+    bgm: {fileID: 8300000, guid: a5a8c0227bcf84c8db22987c994ad90a, type: 3}
 --- !u!81 &6275094832318778907
 AudioListener:
   m_ObjectHideFlags: 0

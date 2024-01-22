@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 2230132327007644734, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5f348b7ba875f4297ba047c93b651a66, type: 3}
+      objectReference: {fileID: 21300000, guid: 31f5e51682409442b99e958d003ba1e7, type: 3}
     - target: {fileID: 6728310621591435476, guid: 23e6e41ac85f4414984cd1e26ba78723, type: 3}
       propertyPath: m_Name
       value: ResultCup_Mike
