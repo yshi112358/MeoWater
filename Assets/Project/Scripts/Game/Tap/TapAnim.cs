@@ -16,10 +16,8 @@ namespace Game.Tap
         public void DropNeko()
         {
             _nekoMaker.MakeNeko(NekoSelectionManager.nekoDataBaseListStatic[(int)_nekoEnum]);
-            _animator.speed = 0;
             //次のフレームで削除
-            Observable.NextFrame()
-                .Subscribe(_ => Destroy(_gameObject));
+            Destroy(_gameObject);
         }
     }
 }

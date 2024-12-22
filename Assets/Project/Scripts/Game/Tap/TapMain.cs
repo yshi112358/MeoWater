@@ -19,7 +19,7 @@ namespace Game.Tap
         [SerializeField] private GameObject _tapAnimObj;
         void Start()
         {
-            _time = (_selectionData.level == 0) ? 2f : 1f;
+            _time = (_selectionData.level == 0) ? 1.5f : 1f;
             
             Observable
                 .Interval(System.TimeSpan.FromSeconds(_time))
