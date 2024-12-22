@@ -6,17 +6,18 @@ using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
 
+[ExecuteInEditMode]
 public class DisplayNumber : MonoBehaviour
 {
     [SerializeField] private List<Sprite> _numberSpriteList = new List<Sprite>(10);
-    [SerializeField] private int _index;
+    [SerializeField] public int num;
 
-    void Start()
+    void Awake()
     {
-        ScoreManager.scoreList.ObserveEveryValueChanged(x => x[_index])
-            .Subscribe(x =>
-            {
-                GetComponent<Image>().sprite = _numberSpriteList[x / 30];
-            }).AddTo(this);
+        GetComponent<Image>().sprite = _numberSpriteList[num];
+    }
+    public void SetNumber(int num)
+    {
+        GetComponent<Image>().sprite = _numberSpriteList[num];
     }
 }
