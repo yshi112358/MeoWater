@@ -9,6 +9,7 @@ public class NekoDataBase
     public GameObject nekoCupResult => _nekoCupResult;
     public GameObject nekoCupCollection => _nekoCupCollection;
     public GameObject bookDetail => _bookDetail;
+    public GameObject tapAnimObj => _tapAnimObj;
 
 
     [SerializeField] private string _nekoName;
@@ -17,4 +18,5 @@ public class NekoDataBase
     [SerializeField] private GameObject _nekoCupResult;
     [SerializeField] private GameObject _nekoCupCollection;
     [SerializeField] private GameObject _bookDetail;
+    [SerializeField] private GameObject _tapAnimObj;
 }

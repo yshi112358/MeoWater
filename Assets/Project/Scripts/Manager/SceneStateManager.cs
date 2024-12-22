@@ -64,7 +64,7 @@ namespace Game.Manager
             Resources.UnloadUnusedAssets();
             _text.text += "UnloadUnusedAssets" + "\n";
 
-            yield return new WaitForSeconds(10f);
+            // yield return new WaitForSeconds(10f);
 
             yield return StartCoroutine(LoadSceneCo(sceneName));
             _text.text += "Load: " + sceneName + "\n";
