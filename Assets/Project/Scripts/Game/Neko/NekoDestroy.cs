@@ -11,8 +11,9 @@ namespace Game.Neko
     public class NekoDestroy : MonoBehaviour
     {
         private NekoCollisionList _nekoCollisionList => GetComponent<NekoCollisionList>();
-        private NekoDestroyManager _nekoDestroyManager => FindObjectOfType<NekoDestroyManager>();
+        private NekoDestroyManager _nekoDestroyManager => FindObjectsByType<NekoDestroyManager>(FindObjectsSortMode.None)[0];
         private bool _isDestroy = false;
+        private NekoHighLight _nekoHighLight => FindObjectsByType<NekoHighLight>(FindObjectsSortMode.None)[0];
 
         [SerializeField] SelectionData _selectionData;
         void Start()
@@ -48,6 +49,7 @@ namespace Game.Neko
         public void DestroyNeko()
         {
             _isDestroy = true;
+            _nekoHighLight.DestroyLine(gameObject);
             gameObject.SetActive(false);
         }
     }

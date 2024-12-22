@@ -16,6 +16,7 @@ namespace Game.NekoDebug
 
 		void Awake()
 		{
+			Debug.Log("DebugNekoCollision");
 			this.UpdateAsObservable()
 				.TakeUntilDisable(this.gameObject)
 				.Subscribe(_ =>
