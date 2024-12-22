@@ -16,7 +16,6 @@ namespace Game.Tap
         [SerializeField] private float _time = 3f;
 
         [SerializeField] SelectionData _selectionData;
-        [SerializeField] private GameObject _tapAnimObj;
         void Start()
         {
             _time = (_selectionData.level == 0) ? 1.5f : 1f;

@@ -85,14 +85,6 @@ public class DebugPlayerInput : MonoBehaviour
                 textTouch.text = str;
             }).AddTo(this);
     }
-    public void EnableGyro()
-    {
-        _player.EnableGyro();
-    }
-    public void EnableAccel()
-    {
-        _player.EnableAccel();
-    }
     public void EnableTouch()
     {
         _player.EnableTouch();

@@ -10,15 +10,9 @@ namespace Game.Manager
     public class EndManager : MonoBehaviour
     {
         [SerializeField] private UnityEvent _unityEvent;
-        void Start()
+        public void End()
         {
-            this.OnTriggerEnter2DAsObservable()
-                .Where(collider => collider.gameObject.tag == "Neko")
-                .Subscribe(_ =>
-                {
-                    _unityEvent.Invoke();
-                })
-                .AddTo(this);
+            _unityEvent.Invoke();
         }
     }
 }
