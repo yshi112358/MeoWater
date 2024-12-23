@@ -14,15 +14,21 @@ namespace Game.Player.InputImpls
 {
     public class PlayerInputEventProvider : MonoBehaviour, IInputEventProvider
     {
-        public IReadOnlyReactiveProperty<float> Move => _move;
-        private ReactiveProperty<float> _move = new ReactiveProperty<float>(0f);
+        public IReadOnlyReactiveProperty<float> point => _point;
+        private ReactiveProperty<float> _point = new ReactiveProperty<float>(0f);
 
         private IDisposable _disposable = Disposable.Empty;
-        private float _moveMax => Time.deltaTime;
+        private float _pointMax => Time.deltaTime;
 
         void Awake()
         {
+#if UNITY_ANDROID
             EnableTouch();
+#elif UNITY_IPHONE
+            EnableTouch();
+#else
+            EnableMouse();
+#endif
         }
 
         public bool EnableTouch()
@@ -32,18 +38,18 @@ namespace Game.Player.InputImpls
                 return false;
 
             InputSystem.EnableDevice(Touch);
-            _move.Value = 0;
+            _point.Value = Screen.width / 2;
             _disposable.Dispose();
             _disposable = this.UpdateAsObservable()
+                .Where(_ => Touch.primaryTouch.press.isPressed || Touch.primaryTouch.press.wasPressedThisFrame)
                 .Select(_ => Touch.primaryTouch.position.x.ReadValue())
                 .Subscribe(x =>
                 {
-                    var preValue = _move.Value;
-                    var newValue = (x - (float)Screen.width / 2) / (float)Screen.width;
-                    _move.Value += Mathf.Clamp(newValue - preValue, -_moveMax, _moveMax);
+                    _point.Value = x;
                 }).AddTo(this);
             return true;
         }
+
         public bool EnableMouse()
         {
             var Mouse = UnityEngine.InputSystem.Mouse.current;
@@ -51,15 +57,14 @@ namespace Game.Player.InputImpls
                 return false;
 
             InputSystem.EnableDevice(Mouse);
-            _move.Value = 0;
+            _point.Value = Screen.width / 2;
             _disposable.Dispose();
             _disposable = this.UpdateAsObservable()
+                .Where(_ => Mouse.leftButton.isPressed || Mouse.leftButton.wasPressedThisFrame)
                 .Select(_ => Mouse.position.x.ReadValue())
                 .Subscribe(x =>
                 {
-                    var preValue = _move.Value;
-                    var newValue = (x - (float)Screen.width / 2) / (float)Screen.width;
-                    _move.Value += Mathf.Clamp(newValue - preValue, -_moveMax, _moveMax);
+                    _point.Value = x;
                 }).AddTo(this);
             return true;
         }

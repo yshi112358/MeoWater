@@ -4,6 +4,6 @@ namespace Game.Player
 {
     public interface IInputEventProvider
     {
-        IReadOnlyReactiveProperty<float> Move { get; }
+        IReadOnlyReactiveProperty<float> point { get; }
     }
 }
