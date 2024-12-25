@@ -9,7 +9,7 @@ public class ScoreNumber : MonoBehaviour
         ScoreManager.score
             .Subscribe(x =>
             {
-                GetComponent<DisplayNumber_10000>().num.Value = x*100;
+                GetComponent<DisplayNumber_10000>().num.Value = x;
             }).AddTo(this);
     }
 }

@@ -23,7 +23,7 @@ namespace Game.Score
         public static void AddScore(int index, int score)
         {
             _scoreList[index] += score;
-            _score.Value += score;
+            _score.Value += score * 100;
         }
     }
 }
