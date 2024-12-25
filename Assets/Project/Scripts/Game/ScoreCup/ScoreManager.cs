@@ -17,6 +17,7 @@ namespace Game.Score
         void Awake()
         {
             _scoreList = new List<int>() { 0, 0, 0, 0 };
+            _score.Value = 0;
         }
 
         public static void AddScore(int index, int score)

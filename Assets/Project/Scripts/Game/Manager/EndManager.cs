@@ -10,9 +10,15 @@ namespace Game.Manager
     public class EndManager : MonoBehaviour
     {
         [SerializeField] private UnityEvent _unityEvent;
+        private bool _end=false;
         public void End()
         {
-            _unityEvent.Invoke();
+            if(!_end)
+            {
+                Physics2D.simulationMode = SimulationMode2D.Script;
+                _end=true;
+                _unityEvent.Invoke();
+            }
         }
     }
 }
