@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UniRx;
-using UniRx.Triggers;
-using Unity.VisualScripting;
 using Game.Manager;
 
 public class BGMManager : MonoBehaviour
@@ -15,6 +11,7 @@ public class BGMManager : MonoBehaviour
 
     private AudioSource audioSource1;
     private AudioSource audioSource2;
+    private float _volume = 1;
 
     void Awake()
     {
@@ -24,7 +21,6 @@ public class BGMManager : MonoBehaviour
         SceneState.sceneName
             .Subscribe(x =>
             {
-                Debug.Log(x);
                 foreach (var bgmSet in bgmSets)
                 {
                     audioSource1 = transform.GetChild(0).GetComponent<AudioSource>();
@@ -35,6 +31,7 @@ public class BGMManager : MonoBehaviour
                     }
                 }
             }).AddTo(this);
+
     }
 
     private void CheckInstance()
@@ -78,7 +75,7 @@ public class BGMManager : MonoBehaviour
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(1, 0, currentTime / duration);
+            audioSource.volume = Mathf.Lerp(_volume, 0, currentTime / duration);
             yield return null;
         }
         audioSource.Stop();
@@ -92,7 +89,7 @@ public class BGMManager : MonoBehaviour
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(0, 1, currentTime / duration);
+            audioSource.volume = Mathf.Lerp(0, _volume, currentTime / duration);
             yield return null;
         }
         audioSource.volume = 1;

@@ -2546,6 +2546,7 @@ GameObject:
   - component: {fileID: 222666997}
   - component: {fileID: 222666996}
   - component: {fileID: 222666995}
+  - component: {fileID: 222666999}
   m_Layer: 6
   m_Name: BGM Button
   m_TagString: Untagged
@@ -2633,7 +2634,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 222666997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 222666999}
+        m_TargetAssemblyTypeName: MusicSwitch, Assembly-CSharp
+        m_MethodName: MusicSwitchEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &222666997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,6 +2685,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222666993}
   m_CullTransparentMesh: 1
+--- !u!114 &222666999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222666993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38596e6028be44d1487584a5d2e80a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicOn: {fileID: 318676639}
+  _musicOff: {fileID: 671826503}
 --- !u!1 &269717091
 GameObject:
   m_ObjectHideFlags: 0
@@ -7990,7 +8017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 899546a177846453da589b6c6f9c55ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09d52156494cb4d438abde7c65ce8492, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
