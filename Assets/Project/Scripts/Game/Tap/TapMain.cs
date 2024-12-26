@@ -16,7 +16,7 @@ namespace Game.Tap
         [SerializeField] SelectionData _selectionData;
         private bool _paused = false;
 
-        void Start()
+        public void init()
         {
             _time = (_selectionData.level == 0) ? 1.5f : 1f;
 
