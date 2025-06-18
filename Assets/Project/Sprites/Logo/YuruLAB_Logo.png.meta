@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 418c3dcdbc4254ebb9936740b1c4882d
+guid: 4bb64f060a85843d98d6da74ccbff66d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3687958989371996917
-    second: Common_icon 1_0
+      213: 4495920371585919109
+    second: YuruLAB_Logo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Common_icon 1_0
+      name: YuruLAB_Logo_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 79
-        width: 846
-        height: 846
+        x: 103
+        y: 103
+        width: 1894
+        height: 1894
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b05064cb6dcb1dcc0800000000000000
-      internalID: -3687958989371996917
+      spriteID: 58822dee1c7b46e30800000000000000
+      internalID: 4495920371585919109
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Common_icon 1_0: -3687958989371996917
+      YuruLAB_Logo_0: 4495920371585919109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
