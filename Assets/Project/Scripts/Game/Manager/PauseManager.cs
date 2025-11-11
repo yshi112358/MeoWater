@@ -13,6 +13,7 @@ namespace Game.Manager
 
         public void Resume()
         {
+            Physics2D.simulationMode = SimulationMode2D.Update;
             Time.timeScale = Mathf.Clamp(LevelManager.speed, 1f, LevelManager.speedMax);
         }
     }
