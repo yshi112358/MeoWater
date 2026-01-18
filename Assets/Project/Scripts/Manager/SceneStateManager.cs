@@ -17,15 +17,19 @@ namespace Game.Manager
             //     SceneState.SetSceneName(SceneManager.GetSceneAt(0).name);
         }
 
-        private void CheckInstance(){
-            if(Instance == null){
+        private void CheckInstance()
+        {
+            if (Instance == null)
+            {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
-            }else{
+            }
+            else
+            {
                 Destroy(gameObject);
             }
         }
-        
+
         public void LoadScene(string sceneName)
         {
             StartCoroutine(Load(sceneName));
@@ -64,7 +68,7 @@ namespace Game.Manager
             Resources.UnloadUnusedAssets();
             _text.text += "UnloadUnusedAssets" + "\n";
 
-            // yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(1f);
 
             yield return StartCoroutine(LoadSceneCo(sceneName));
             _text.text += "Load: " + sceneName + "\n";
@@ -75,10 +79,10 @@ namespace Game.Manager
             yield return new WaitUntil(() => SceneManager.SetActiveScene(scenePath));
             _text.text += "Active: " + sceneName + "\n";
 
-            // yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
             _text.text += "Wait" + "\n";
 
-            if(setLoadEnd)
+            if (setLoadEnd)
                 SceneState.SetLoadEnd(true);
             _text.text += "LoadEnd" + "\n";
 
